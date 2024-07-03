@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Country Information</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <input type="text" id="txtSearchValue" placeholder="Enter country name">
+        <button onclick="serch()">Search</button>
 
-    <input type="text" id="txtSearchValue">
-    <input type="button" value="Search" onclick="serchCuntrie()">
-
-    <div>
-        <h1 id="officialName">official name</h1>
-        <h1 id="name"> name</h1>
-        <div id="img">
-    
+        <div id="country-info">
+            <h1 id="officialName"></h1>
+            <h1 id="name"></h1>
+            <h3 id="capital"></h3>
+            <div id="img"></div>
         </div>
-    </div>
 
-    <table id="tbl"></table>
+        <table id="tbl"></table>
+    </div>
 
     <script src="app.js"></script>
 </body>
