@@ -52,7 +52,6 @@ document.getElementById("closePopup").addEventListener("click", function() {
     document.getElementById("popup").style.display = "none";
 });
 
-// Initial load of all countries
 fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
     .then((data) => {
