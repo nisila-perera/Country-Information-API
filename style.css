@@ -1,57 +1,204 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: black;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #1a1a2e 0%, #16213e 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
     padding: 20px;
-    color: #fff;
-    
+    color: #e0e0e0;
 }
 
 .container {
+    background: rgba(30, 30, 50, 0.5);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border: 3px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     max-width: 800px;
     width: 100%;
 }
 
-input {
+input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
 }
 
-button {
-    background: rgba(255, 255, 255, 0.3);
+input[type="text"]::placeholder {
+    color: #a0a0a0;
+}
+
+#searchResults {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.country-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
     cursor: pointer;
-    width: 250px;
-    color: #fff;
+    transition: background 0.3s ease;
 }
 
-h1 {
-    margin: 10px 0;
+.country-item:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-#img img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 20px;
+.country-flag {
+    width: 30px;
+    margin-right: 10px;
 }
 
 table {
     width: 100%;
-    margin-top: 30px;
+    border-collapse: collapse;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.table-flag {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-content {
+    background: rgba(30, 30, 50, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    color: #e0e0e0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+.country-flag-large {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .close-btn {
+        top: 5px;
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    .table-flag {
+        width: 20px;
+    }
+
+    .popup-content {
+        padding: 10px;
+    }
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table tr {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }

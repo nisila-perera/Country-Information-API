@@ -8,17 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <input type="text" id="txtSearchValue" placeholder="Enter country name">
-        <button onclick="serch()">Search</button>
-
-        <div id="country-info">
-            <h1 id="officialName"></h1>
-            <h1 id="name"></h1>
-            <h3 id="capital"></h3>
-            <div id="img"></div>
-        </div>
-
+        <h2>Search Here</h2>
+        <input type="text" id="txtSearchValue" placeholder="Search for a country...">
+        <div id="searchResults"></div>
         <table id="tbl"></table>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close-btn">&times;</span>
+            <div id="popup-content"></div>
+        </div>
     </div>
 
     <script src="app.js"></script>
